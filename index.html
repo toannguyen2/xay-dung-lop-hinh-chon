@@ -14,17 +14,16 @@
 		let canvas = document.getElementById('myCanvas');
 		let ctx = canvas.getContext('2d');
 		let cricle = new Cricle(17, 'red');
-		setInterval(function() {
-			cricle.draw(ctx, canvas);
-		}, 17);
 
 		function changerRadius(){
 			let enter = Number(prompt('Nhập vào bán kính'));
 			cricle.radius = enter;
+			cricle.draw(ctx, canvas);
 		}
 		function changerColor(){
 			let enter = prompt('Nhập vào màu sắc');
 			cricle.color = enter;
+			cricle.draw(ctx, canvas);
 		}
 	</script>
 </body>
