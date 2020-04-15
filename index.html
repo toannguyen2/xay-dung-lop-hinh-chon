@@ -7,9 +7,25 @@
 </head>
 <body>
 	<p>[Thực hành] Xây dựng lớp Hình Tròn</p>
+	<canvas id="myCanvas" width="800" height="300"></canvas><br/>
+	<button onclick="changerRadius()">Thay đổi diện tích</button>
+	<button onclick="changerColor()">Thay đổi màu sắc</button>
 	<script type="text/javascript">
-		let cricle = new Cricle(17, '#ffffff');
-		alert('radius: ' + cricle.radius + '; area: ' + cricle.getArea());
+		let canvas = document.getElementById('myCanvas');
+		let ctx = canvas.getContext('2d');
+		let cricle = new Cricle(17, 'red');
+		setInterval(function() {
+			cricle.draw(ctx, canvas);
+		}, 17);
+
+		function changerRadius(){
+			let enter = Number(prompt('Nhập vào bán kính'));
+			cricle.radius = enter;
+		}
+		function changerColor(){
+			let enter = Number(prompt('Nhập vào màu sắc'));
+			cricle.color = enter;
+		}
 	</script>
 </body>
 </html>
